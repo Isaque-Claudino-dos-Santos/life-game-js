@@ -3,6 +3,7 @@
 
 import canvas2d from './modules/canvas2d.js';
 import draw from './modules/draw.js';
+import matrix from './modules/matrix.js';
 
 const canvas = canvas2d.getElement('#main');
 const context = canvas2d.getContext(canvas);
@@ -21,4 +22,8 @@ canvas.addEventListener('mousedown', (e) => {
   const [x, y] = [e.offsetX, e.offsetY];
 
   console.log(x, y);
+});
+
+matrix.forEach([20, 20], (row, column) => {
+  console.log(row, column);
 });
