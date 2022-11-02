@@ -21,3 +21,5 @@ canvas2d.getContext = (canvasElement) => {
   if (c) return c;
   throw new Error('The element passed not valid');
 };
+
+export default canvas2d;
