@@ -16,3 +16,9 @@ draw.grid(context, {
   gridWidth: canvas.width / 60,
   gridHeight: canvas.height / 60,
 });
+
+canvas.addEventListener('mousedown', (e) => {
+  const [x, y] = [e.offsetX, e.offsetY];
+
+  console.log(x, y);
+});
