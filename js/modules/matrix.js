@@ -3,7 +3,7 @@ const matrix = {};
 /**
  *
  * @param {[maxRow:number,maxColumn:number]} param0
- * @param {({ row: number, column: number },[maxRow:number,maxColumn:number]) => void} callback
+ * @param { ({row,column}:{ row: number, column: number },[maxRow,maxColumn]:[maxRow:number,maxColumn: number]) => void} callback
  */
 matrix.forEach = ([maxRow, maxColumn], callback) => {
   for (let i = 0; i < maxRow; i++) {
@@ -14,3 +14,5 @@ matrix.forEach = ([maxRow, maxColumn], callback) => {
 };
 
 export default matrix;
+
+[].forEach((element) => {});

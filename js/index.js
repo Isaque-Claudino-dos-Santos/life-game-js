@@ -24,6 +24,4 @@ canvas.addEventListener('mousedown', (e) => {
   console.log(x, y);
 });
 
-matrix.forEach([20, 20], (row, column) => {
-  console.log(row, column);
-});
+matrix.forEach([5, 5], (cell) => {});
