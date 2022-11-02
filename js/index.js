@@ -4,13 +4,15 @@
 import canvas2d from './modules/canvas2d.js';
 import draw from './modules/draw.js';
 
-const context = canvas2d.getContext(canvas2d.getElement('#main'));
+const canvas = canvas2d.getElement('#main');
+const context = canvas2d.getContext(canvas);
 
-draw.rect(context, {
-  x: 10,
-  y: 10,
-  width: 30,
-  height: 30,
-  type: 'fill',
-  color: 'red',
+draw.grid(context, {
+  x: 0,
+  y: 0,
+  color: 'black',
+  width: canvas.width,
+  height: canvas.height,
+  gridWidth: canvas.width / 60,
+  gridHeight: canvas.height / 60,
 });
