@@ -7,7 +7,7 @@ const matrix = {};
  */
 matrix.forEach = ([maxRow, maxColumn], callback) => {
   for (let i = 0; i < maxRow; i++) {
-    for (letj = 0; j < maxColumn; j++) {
+    for (let j = 0; j < maxColumn; j++) {
       callback({ row: i, column: j }, [maxRow, maxColumn]);
     }
   }
