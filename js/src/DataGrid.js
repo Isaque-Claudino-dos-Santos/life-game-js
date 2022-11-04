@@ -4,14 +4,16 @@ import matrix from '../modules/matrix.js';
 class DataGrid {
   /**
    * @private
-   * @type {{width:number,column:number,row:number,x:number,y:number height:number,row:number,column:number,color:string}[]}
+   * @typedef {{width:number,column:number,row:number,x:number,y:number height:number,row:number,column:number,color:string}} TypeGridProps
+   * @type {TypeGridProps[]}
    */
+
   grids = [];
 
   /**
    * return the all grids
    * @public
-   * @return {{width:number,column:number,row:number,x:number,y:number height:number,row:number,column:number,color:string}[]}
+   * @return {TypeGridProps[]}
    */
   getGrids() {
     return this.grids;
@@ -20,7 +22,7 @@ class DataGrid {
   /**
    * update grid
    * @param {number} index
-   * @param {{width?:number,column?:number,row?:number,x?:number,y?:number height?:number,row?:number,column?:number,color?:string}} props
+   * @param {TypeGridProps} props
    */
   updateGrid(index, props) {
     Object.assign(this.grids[index], { ...props });
