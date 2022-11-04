@@ -22,11 +22,16 @@ class LifeGame {
   }
 
   /**
-   *
+   * @private
    * @param {TypeGridProps[]} grids
    */
-  checkGridsAlive(grids) {
-    grids.forEach(() => {});
+  getTotalGridsAlive(grids) {
+    let total = 0;
+    grids.forEach((grid) => {
+      if (grid.alive) total++;
+    });
+
+    return total;
   }
 
   aplicateRules() {
@@ -37,13 +42,9 @@ class LifeGame {
         this.grids[calcAG.right(index)],
         this.grids[calcAG.topLeft(index)],
         this.grids[calcAG.topRight(index)],
-        this.grids[calcAG.downLeft(index)],
-        this.grids[calcAG.downRight(index)],
       ].filter(Boolean);
 
-      const totalAlive = this.checkGridsAlive(adjacentsGrids);
-
-      console.log(adjacentsGrids);
+      const totalAlive = this.getTotalGridsAlive(adjacentsGrids);
     });
   }
 }
