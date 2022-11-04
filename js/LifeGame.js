@@ -4,7 +4,7 @@
     nacer = (== 3)
 */
 
-import calcAG from './calcAdjacentsGrids.js';
+import calcAG from './src/calcAdjacentsGrids.js';
 
 class LifeGame {
   /**
