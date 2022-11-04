@@ -12,21 +12,3 @@ const context = canvas2d.getContext(canvas);
 const dataGrid = new DataGrid();
 dataGrid.create(canvas.width, canvas.height, 20, 20);
 dataGrid.renderInCanvas(context);
-
-canvas.addEventListener('mousedown', (e) => {
-  const [mX, mY] = [e.offsetX, e.offsetY];
-
-  dataGrid.getGrids().forEach(({ x, y, width, height, color }, index) => {
-    if (mX > x && mX < x + width && mY > y && mY < y + height) {
-      color = 'blue';
-      draw.rect(context, {
-        x,
-        y,
-        width,
-        height,
-        color,
-        type: 'fill',
-      });
-    }
-  });
-});
