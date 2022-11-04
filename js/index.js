@@ -15,9 +15,11 @@ dataGrid.create(
   canvas.width / 3,
   canvas.height / 3
 );
-dataGrid.renderInCanvas(context);
 
-dataGrid.updateGrid(4, { color: 'red', type: 'fill' });
+//Initial grids alive
+dataGrid.updateGrid(3, { alive: true });
+dataGrid.updateGrid(4, { alive: true });
+dataGrid.updateGrid(5, { alive: true });
 
 dataGrid.renderInCanvas(context);
 
