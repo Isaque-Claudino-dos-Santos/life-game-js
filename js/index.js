@@ -2,8 +2,6 @@
 ('use strict');
 
 import canvas2d from './modules/canvas2d.js';
-import draw from './modules/draw.js';
-import matrix from './modules/matrix.js';
 import DataGrid from './src/DataGrid.js';
 
 const canvas = canvas2d.getElement('#main');
