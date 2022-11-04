@@ -9,6 +9,8 @@ type TypeGridProps = {
   column: number;
   color: string;
   type: 'fill' | 'stroke';
+  alive?: boolean;
+  position: number;
 };
 
 type TypeCalcAdjacentsGridsFC = {
