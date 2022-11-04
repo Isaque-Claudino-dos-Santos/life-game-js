@@ -4,7 +4,6 @@ import matrix from '../modules/matrix.js';
 class DataGrid {
   /**
    * @private
-   * @typedef {{width:number,column:number,row:number,x:number,y:number height:number,row:number,column:number,color:string}} TypeGridProps
    * @type {TypeGridProps[]}
    */
 
@@ -22,7 +21,7 @@ class DataGrid {
   /**
    * update grid
    * @param {number} index
-   * @param {TypeGridProps} props
+   * @param {Partial<TypeGridProps>} props
    */
   updateGrid(index, props) {
     Object.assign(this.grids[index], { ...props });
@@ -57,8 +56,15 @@ class DataGrid {
    * @param {CanvasRenderingContext2D} context
    */
   renderInCanvas(context) {
-    this.grids.forEach(({ x, y, width, height, color }) => {
-      draw.rect(context, { x, y, width, height, color, type: 'stroke' });
+    this.grids.forEach(({ x, y, width, height, color, type }) => {
+      draw.rect(context, {
+        x,
+        y,
+        width,
+        height,
+        color,
+        type: type ?? 'stroke',
+      });
     });
   }
 }
