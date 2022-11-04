@@ -39,7 +39,7 @@ class DataGrid {
     const iRow = areaWidth / gridWidth;
     const iColumn = areaHeight / gridHeight;
 
-    matrix.forEach([iRow, iColumn], ({ column, row }, index) => {
+    matrix.forEach([iRow, iColumn], ({ column, row }, [], index) => {
       this.grids.push({
         x: row * gridWidth,
         y: column * gridHeight,
