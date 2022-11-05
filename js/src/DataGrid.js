@@ -1,4 +1,3 @@
-import draw from '../modules/draw.js';
 import matrix from '../modules/matrix.js';
 
 class DataGrid {
@@ -18,15 +17,6 @@ class DataGrid {
   }
 
   /**
-   * update grid
-   * @param {number} index
-   * @param {Partial<TypeGridProps>} props
-   */
-  updateGrid(index, props) {
-    Object.assign(this.grids[index], { ...props });
-  }
-
-  /**
    * Create datas of the grids
    * @public
    * @param {number} areaWidth
@@ -34,7 +24,7 @@ class DataGrid {
    * @param {number} gridWidth
    * @param {number} gridHeight
    */
-  create = (areaWidth, areaHeight, gridWidth, gridHeight) => {
+  create(areaWidth, areaHeight, gridWidth, gridHeight) {
     const iRow = areaWidth / gridWidth;
     const iColumn = areaHeight / gridHeight;
 
@@ -42,30 +32,12 @@ class DataGrid {
       this.grids.push({
         x: row * gridWidth,
         y: column * gridHeight,
-        column,
         height: gridHeight,
         width: gridWidth,
-        row,
         color: 'black',
         type: 'fill',
         alive: false,
-        nextState: false,
-      });
-    });
-  };
-
-  /**
-   * @param {CanvasRenderingContext2D} context
-   */
-  renderInCanvas(context) {
-    this.grids.forEach(({ x, y, width, height }) => {
-      draw.rect(context, {
-        x,
-        y,
-        width,
-        height,
-        color: 'green',
-        type: 'stroke',
+        nextStateAlive: false,
       });
     });
   }

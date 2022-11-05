@@ -1,14 +1,10 @@
-type TypeGridProps = {
-  width: number;
-  column: number;
-  row: number;
+type TypeEntityProps = {
   x: number;
   y: number;
+  width: number;
   height: number;
-  row: number;
-  column: number;
   color: string;
   type: 'fill' | 'stroke';
-  alive?: boolean;
-  nextState?: boolean;
+  alive: boolean;
+  nextStateAlive: boolean;
 };
