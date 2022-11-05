@@ -56,6 +56,7 @@ class IntervalHendler {
       throw new Error('The event ' + this.name + ' not created');
 
     clearInterval(this.id);
+    this.created = false;
   }
 
   /**
@@ -64,7 +65,7 @@ class IntervalHendler {
    */
   start() {
     if (this.created)
-      throw new Error('The event ' + this.name + 'allready created');
+      throw new Error('The event ' + this.name + ' allready created');
     this.id = setInterval(this.callback, this.time);
     this.created = true;
   }
