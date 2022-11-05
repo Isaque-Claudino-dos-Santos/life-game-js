@@ -47,6 +47,10 @@ class IntervalHendler {
     this.time = time;
   }
 
+  /**
+   * Stop loop
+   * @public
+   */
   stop() {
     if (!this.created)
       throw new Error('The event ' + this.name + ' not created');
@@ -54,6 +58,10 @@ class IntervalHendler {
     clearInterval(this.id);
   }
 
+  /**
+   * Start loop
+   * @public
+   */
   start() {
     if (this.created)
       throw new Error('The event ' + this.name + 'allready created');
@@ -61,9 +69,23 @@ class IntervalHendler {
     this.created = true;
   }
 
+  /**
+   * Reset if loop allready created
+   * @public
+   */
   reset() {
     if (!this.created) return;
     this.stop();
     this.start();
   }
+
+  /**
+   * Toogle between start and stop
+   * @public
+   */
+  toggle() {
+    this.created ? this.stop() : this.start();
+  }
 }
+
+export default IntervalHendler;
