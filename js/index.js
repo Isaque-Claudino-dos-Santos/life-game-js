@@ -5,10 +5,11 @@ import LifeGame from './src/LifeGame.js';
 import canvas2d from './modules/canvas2d.js';
 import DataGrid from './src/DataGrid.js';
 import draw from './modules/draw.js';
+import IntervalHendler from './src/IntervalHandler.js';
 
 const canvas = canvas2d.getElement('#main');
 const context = canvas2d.getContext(canvas);
-const pixelSquares = 40;
+const pixelSquares = 5;
 
 const dataGrid = new DataGrid();
 dataGrid.create(
@@ -39,18 +40,13 @@ function nextState() {
   lifeGame.aplicateNextState(context);
 }
 
-let idInterval = 0;
-let speed = 100;
-function playState() {
-  idInterval = setInterval(() => {
+const loopLifeGame = new IntervalHendler(
+  'Loop life game',
+  () => {
     lifeGame.aplicateNextState(context);
-  }, speed);
-}
-
-function resetPlayState() {
-  clearInterval(idInterval);
-  playState();
-}
+  },
+  100
+);
 
 /** @type {HTMLButtonElement | null}*/
 
@@ -65,14 +61,12 @@ if (buttonNext) buttonNext.onclick = nextState;
 
 if (buttonPlay)
   buttonPlay.onclick = (e) => {
-    const isPlay = buttonPlay.checked;
-
-    if (isPlay) playState();
-    if (!isPlay) clearInterval(idInterval);
+    loopLifeGame.toggle();
   };
 
 if (inputSpeed)
   inputSpeed.onkeyup = () => {
-    speed = Number(inputSpeed.value);
-    if (buttonPlay?.checked) resetPlayState();
+    const inputValue = Number(inputSpeed.value);
+    loopLifeGame.setTime(inputValue);
+    loopLifeGame.reset();
   };
