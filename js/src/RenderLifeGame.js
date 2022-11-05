@@ -11,7 +11,7 @@ class RenderLifeGame {
   }
 
   /**
-   * @private
+   * @public
    * @param {CanvasRenderingContext2D} context
    * @param {TypeGridProps} entity
    */
@@ -20,7 +20,7 @@ class RenderLifeGame {
   }
 
   /**
-   * @private
+   * @public
    * @param {CanvasRenderingContext2D} context
    * @param {TypeGridProps} entity
    */
