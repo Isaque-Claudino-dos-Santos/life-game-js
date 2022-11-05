@@ -37,6 +37,14 @@ class UpdateLifeGame {
   }
 
   /**
+   * @param {number} index
+   * @param {Partial<TypeEntityProps>} props
+   */
+  modEntity(index, props) {
+    Object.assign(this.entities[index], { ...props });
+  }
+
+  /**
    * @public
    * @param {TypeEntityProps[]} entities
    */
@@ -124,12 +132,12 @@ class UpdateLifeGame {
       const cloneEntities = [
         this.entities[index + 1],
         this.entities[index - 1],
-        this.entities[index + this.pixelSize],
-        this.entities[index - this.pixelSize],
-        this.entities[index + this.pixelSize + 1],
-        this.entities[index + this.pixelSize - 1],
-        this.entities[index - this.pixelSize + 1],
-        this.entities[index - this.pixelSize - 1],
+        this.entities[index + this.screenSquarePixel],
+        this.entities[index - this.screenSquarePixel],
+        this.entities[index + this.screenSquarePixel + 1],
+        this.entities[index + this.screenSquarePixel - 1],
+        this.entities[index - this.screenSquarePixel + 1],
+        this.entities[index - this.screenSquarePixel - 1],
       ].filter(Boolean);
 
       const totalEntitiesAlive = this.getTotalEntitiesAlivesAndAdjacents(

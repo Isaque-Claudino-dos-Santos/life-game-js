@@ -2,7 +2,7 @@ import RenderLifeGame from './RenderLifeGame.js';
 import UpdateLifeGame from './UpdateLifeGame.js';
 
 class LifeGame {
-  /**@private */
+  /**@private*/
   context;
   /**@private*/
   updateLifeGame;
@@ -71,9 +71,6 @@ class LifeGame {
     );
   }
 
-  /**
-   * Pass to next state
-   */
   next() {
     const modifiedEntities = this.updateLifeGame.run();
     this.renderLifeGame.renderEntities(this.context, modifiedEntities);
