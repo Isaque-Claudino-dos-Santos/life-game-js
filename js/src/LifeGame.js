@@ -7,6 +7,10 @@ class LifeGame {
    */
   grids = [];
 
+  /**
+   * @private
+   * @type {number}
+   */
   pixelSquares = 0;
 
   /**
@@ -19,7 +23,7 @@ class LifeGame {
   }
 
   /**
-   *
+   * @public
    * @return {TypeGridsProps}
    */
   getGrids() {
@@ -27,7 +31,7 @@ class LifeGame {
   }
 
   /**
-   *
+   * @private
    * @param {CanvasRenderingContext2D} context
    * @param {TypeGridProps} grid
    */
@@ -36,6 +40,7 @@ class LifeGame {
   }
 
   /**
+   * @private
    * @param {CanvasRenderingContext2D} context
    * @param {TypeGridProps} grid
    */
@@ -44,6 +49,7 @@ class LifeGame {
   }
 
   /**
+   * @private
    * @param {CanvasRenderingContext2D} context
    * @param {TypeGridProps} grid
    */
@@ -52,6 +58,7 @@ class LifeGame {
   }
 
   /**
+   * @private
    * @param {CanvasRenderingContext2D} context
    * @param {TypeGridProps[]} grids
    */
@@ -107,6 +114,7 @@ class LifeGame {
   }
 
   /**
+   * @private
    * @return {TypeGridProps[]}
    */
   checkNextState() {
@@ -150,7 +158,7 @@ class LifeGame {
   }
 
   /**
-   *
+   * @public
    * @param {CanvasRenderingContext2D} context
    */
   aplicateNextState(context) {
