@@ -6,7 +6,6 @@ class DataGrid {
    * @private
    * @type {TypeGridProps[]}
    */
-
   grids = [];
 
   /**
@@ -39,7 +38,7 @@ class DataGrid {
     const iRow = areaWidth / gridWidth;
     const iColumn = areaHeight / gridHeight;
 
-    matrix.forEach([iRow, iColumn], ({ column, row }, [], index) => {
+    matrix.forEach([iRow, iColumn], ({ column, row }) => {
       this.grids.push({
         x: row * gridWidth,
         y: column * gridHeight,
@@ -48,7 +47,9 @@ class DataGrid {
         width: gridWidth,
         row,
         color: 'black',
-        position: index + 1,
+        type: 'fill',
+        alive: false,
+        nextState: false,
       });
     });
   };
@@ -57,27 +58,15 @@ class DataGrid {
    * @param {CanvasRenderingContext2D} context
    */
   renderInCanvas(context) {
-    console.log(this.grids);
-    this.grids.forEach(({ x, y, width, height, color, type, alive }) => {
-      if (alive)
-        draw.rect(context, {
-          x,
-          y,
-          width,
-          height,
-          color,
-          type: 'fill',
-        });
-
-      if (!alive)
-        draw.rect(context, {
-          x,
-          y,
-          width,
-          height,
-          color,
-          type: 'stroke',
-        });
+    this.grids.forEach(({ x, y, width, height }) => {
+      draw.rect(context, {
+        x,
+        y,
+        width,
+        height,
+        color: 'green',
+        type: 'stroke',
+      });
     });
   }
 }

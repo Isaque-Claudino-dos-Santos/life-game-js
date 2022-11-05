@@ -10,16 +10,5 @@ type TypeGridProps = {
   color: string;
   type: 'fill' | 'stroke';
   alive?: boolean;
-  position: number;
-};
-
-type TypeCalcAdjacentsGridsFC = {
-  top: (gridIndexRef: number) => number;
-  down: (gridIndexRef: number) => number;
-  left: (gridIndexRef: number) => number;
-  right: (gridIndexRef: number) => number;
-  topLeft: (gridIndexRef: number) => number;
-  topRight: (gridIndexRef: number) => number;
-  downLeft: (gridIndexRef: number) => number;
-  downRight: (gridIndexRef: number) => number;
+  nextState?: boolean;
 };
