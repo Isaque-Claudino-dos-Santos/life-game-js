@@ -14,20 +14,4 @@ const updateLifeGame = new UpdateLifeGame(canvas.width, 3);
 const renderLifeGame = new RenderLifeGame();
 const lifeGame = new LifeGame(context, updateLifeGame, renderLifeGame);
 
-updateLifeGame.modEntity(3, {
-  alive: true,
-  nextStateAlive: true,
-});
-
-updateLifeGame.modEntity(4, {
-  alive: true,
-  nextStateAlive: true,
-});
-
-updateLifeGame.modEntity(5, {
-  alive: true,
-  nextStateAlive: true,
-});
-
-lifeGame.next();
 lifeGame.next();
