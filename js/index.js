@@ -11,7 +11,7 @@ const canvas = canvas2d.getElement('#main');
 const context = canvas2d.getContext(canvas);
 
 //Set up Life Game
-const updateLifeGame = new UpdateLifeGame(canvas.width, 5);
+const updateLifeGame = new UpdateLifeGame(canvas.width, 50);
 const renderLifeGame = new RenderLifeGame();
 const lifeGame = new LifeGame(context, updateLifeGame, renderLifeGame);
 
