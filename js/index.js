@@ -30,6 +30,24 @@ for (const element of document.querySelectorAll('.dropdown')) {
   };
 }
 
+function setUpRandonPopulation() {
+  const btnRandonPopulation = document.querySelector(
+    '.setUpArea #randonPopulation'
+  );
+
+  //@ts-ignore
+  btnRandonPopulation.onclick = () => {
+    for (let i = 0; i < 1000; i++) {
+      const rnIndex = Math.floor(Math.random() * 2500);
+      updateLifeGame.modEntity(rnIndex, { alive: true, nextStateAlive: true });
+      renderLifeGame.drawEntityLive(
+        context,
+        updateLifeGame.getEntities(rnIndex)
+      );
+    }
+  };
+}
+
 function setUpButtonNextState() {
   const btnNextState = document.querySelector('.setUpArea #nextState');
   //@ts-ignore
@@ -63,6 +81,7 @@ function setUpSpeed() {
   };
 }
 
+setUpRandonPopulation();
 setUpButtonNextState();
 setUpLoopNextState();
 setUpSpeed();

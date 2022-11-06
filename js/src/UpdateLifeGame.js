@@ -32,9 +32,11 @@ class UpdateLifeGame {
   }
 
   /**
+   * @param {number | null} index
    * @return {TypeEntityProps[]}
    */
-  getEntities() {
+  getEntities(index = null) {
+    if (index) return this.entities[index];
     return this.entities;
   }
 
