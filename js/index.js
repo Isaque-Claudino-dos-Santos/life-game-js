@@ -21,6 +21,7 @@ const loopNextState = new IntervalHendler(
   () => lifeGame.next(),
   100
 );
+updateLifeGame.mouseEvent(canvas, context, renderLifeGame);
 
 for (const element of document.querySelectorAll('.dropdown')) {
   //@ts-ignore

@@ -1,3 +1,5 @@
+import RenderLifeGame from './RenderLifeGame.js';
+
 class UpdateLifeGame {
   /**
    * @readonly
@@ -50,6 +52,31 @@ class UpdateLifeGame {
    */
   setEntities(entities) {
     this.entities = entities;
+  }
+
+  /**
+   * @param {HTMLCanvasElement} canvas
+   * @param {CanvasRenderingContext2D} context
+   * @param {RenderLifeGame} renderLifeGame
+   */
+  mouseEvent(canvas, context, renderLifeGame) {
+    canvas.addEventListener('mousedown', (e) => {
+      const [x, y] = [e.offsetX, e.offsetY];
+
+      for (const entity of this.entities) {
+        if (
+          x > entity.x &&
+          x < entity.x + entity.width &&
+          y > entity.y &&
+          y < entity.y + entity.height
+        ) {
+          if (e.button === 0) {
+            entity.alive = true;
+            renderLifeGame.drawEntityLive(context, entity);
+          }
+        }
+      }
+    });
   }
 
   /**
