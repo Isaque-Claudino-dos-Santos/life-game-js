@@ -38,4 +38,31 @@ function setUpButtonNextState() {
   };
 }
 
+function setUpLoopNextState() {
+  const checkInLoop = document.querySelector('.setUpArea #inLoop');
+
+  //@ts-ignore
+  checkInLoop.onclick = () => {
+    loopNextState.toggle();
+  };
+}
+
+function setUpSpeed() {
+  const rngSpeed = document.querySelector('.setUpArea #speed');
+  const textSpeed = document.querySelector(
+    '.setUpArea label[for="speed"] span'
+  );
+
+  //@ts-ignore
+  rngSpeed.onmousemove = () => {
+    //@ts-ignore
+    textSpeed.textContent = rngSpeed.value;
+    //@ts-ignore
+    loopNextState.setTime(Number(rngSpeed.value));
+    loopNextState.reset();
+  };
+}
+
 setUpButtonNextState();
+setUpLoopNextState();
+setUpSpeed();
