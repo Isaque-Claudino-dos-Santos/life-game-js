@@ -37,8 +37,11 @@ function setUpRandonPopulation() {
 
   //@ts-ignore
   btnRandonPopulation.onclick = () => {
-    for (let i = 0; i < 1000; i++) {
-      const rnIndex = Math.floor(Math.random() * 2500);
+    console.log();
+    for (let i = 0; i < updateLifeGame.screenSize; i++) {
+      const rnIndex = Math.floor(
+        Math.random() * updateLifeGame.getEntities().length
+      );
       updateLifeGame.modEntity(rnIndex, { alive: true, nextStateAlive: true });
       renderLifeGame.drawEntityLive(
         context,
