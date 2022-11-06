@@ -11,7 +11,7 @@ const canvas = canvas2d.getElement('#main');
 const context = canvas2d.getContext(canvas);
 
 //Set up Life Game
-const updateLifeGame = new UpdateLifeGame(canvas.width, 3);
+const updateLifeGame = new UpdateLifeGame(canvas.width, 5);
 const renderLifeGame = new RenderLifeGame();
 const lifeGame = new LifeGame(context, updateLifeGame, renderLifeGame);
 
@@ -28,3 +28,13 @@ for (const element of document.querySelectorAll('.dropdown')) {
     element.classList.toggle('open');
   };
 }
+
+function setUpButtonNextState() {
+  const btnNextState = document.querySelector('.setUpArea #nextState');
+  //@ts-ignore
+  btnNextState.onclick = () => {
+    lifeGame.next();
+  };
+}
+
+setUpButtonNextState();

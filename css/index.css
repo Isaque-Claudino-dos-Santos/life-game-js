@@ -2,13 +2,22 @@
 @import './button.css';
 @import './animations.css';
 @import './inputArea.css';
+@import './views.css';
 
 .container {
   padding: 1%;
 }
 
 header .dropdown {
+  border: 1px solid black;
   margin: 1%;
+}
+
+header .dropdown.open {
+  border: 1px solid black;
+  border-right: 0px;
+  margin: 0%;
+  border-radius: 2px;
 }
 
 header .dropdown ~ .setUpArea {
@@ -30,12 +39,13 @@ header .setUpArea {
   border-radius: 3px;
   padding: 1%;
 
-  width: 50%;
+  width: 90%;
 
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
+
+  min-width: 600px;
 }
 
 main .container {

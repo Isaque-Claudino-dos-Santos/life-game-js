@@ -1,0 +1,19 @@
+@media only screen and (max-width: 650px) {
+  header .container {
+    justify-content: center;
+  }
+
+  header .dropdown {
+    display: none;
+  }
+
+  header .setUpArea {
+    display: flex !important;
+    flex-direction: column;
+    height: 300px;
+  }
+
+  #main {
+    width: 300px;
+  }
+}
