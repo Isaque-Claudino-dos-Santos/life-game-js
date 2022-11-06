@@ -21,3 +21,10 @@ const loopNextState = new IntervalHendler(
   () => lifeGame.next(),
   100
 );
+
+for (const element of document.querySelectorAll('.dropdown')) {
+  //@ts-ignore
+  element.onclick = () => {
+    element.classList.toggle('open');
+  };
+}

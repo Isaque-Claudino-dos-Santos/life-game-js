@@ -4,22 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Life Game</title>
-    <style>
-      #main {
-        border: 1px solid #525252;
-        image-rendering: pixelated;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <canvas id="main" width="500" height="500"></canvas>
-    <button id="nextState">Next Cell</button>
+    <header>
+      <div class="container">
+        <div class="dropdown burguer">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <div class="setUpArea">
+          <button id="nextState">Next State</button>
 
-    <label for="play">Play</label>
-    <input type="checkbox" id="play" />
+          <div class="inputArea">
+            <label for="inLoop">In Loop</label>
+            <input type="checkbox" id="inLoop" />
+          </div>
 
-    <label for="speed">Speed<sub>ms</sub></label>
-    <input type="number" value="100" id="speed" />
+          <div class="inputArea">
+            <label for="speed">Speed <span>0</span><sub>ms</sub></label>
+            <input type="range" min="1" max="1000" />
+          </div>
+
+          <div class="inputArea">
+            <label for="SizeEachPixels">Size of each pixels</label>
+            <input type="number" id="SizeEachPixels" value="5" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <canvas id="main" width="500" height="500"></canvas>
+      </div>
+    </main>
 
     <script src="./js/index.js" type="module"></script>
   </body>

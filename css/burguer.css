@@ -1,0 +1,40 @@
+.burguer {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  opacity: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.burguer i {
+  width: 90%;
+  height: 15%;
+
+  background-color: black;
+  transition-duration: 0.3s;
+}
+
+.burguer.open {
+  justify-content: center;
+}
+
+.burguer.open i:nth-child(1) {
+  position: absolute;
+  transform: rotate(45deg);
+  transition-duration: 0.3s;
+}
+
+.burguer.open i:nth-child(3) {
+  position: absolute;
+  transform: rotate(-45deg);
+  transition-duration: 0.3s;
+}
+
+.burguer.open i:nth-child(2) {
+  opacity: 0;
+}

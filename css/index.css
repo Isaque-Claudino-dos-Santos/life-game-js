@@ -1,0 +1,44 @@
+@import './burguer.css';
+@import './button.css';
+@import './animations.css';
+@import './inputArea.css';
+
+.container {
+  padding: 1%;
+}
+
+header .dropdown {
+  margin: 1%;
+}
+
+header .dropdown ~ .setUpArea {
+  display: none;
+}
+
+header .dropdown.open ~ .setUpArea {
+  display: flex;
+  animation: ghost 0.5s forwards;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+header .setUpArea {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 1%;
+
+  width: 50%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+main .container {
+  display: flex;
+  justify-content: center;
+}

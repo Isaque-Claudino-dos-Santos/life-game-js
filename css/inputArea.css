@@ -1,0 +1,23 @@
+.inputArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  user-select: none;
+}
+
+.inputArea label {
+  font-weight: 500;
+}
+
+.inputArea input[type='number'] {
+  border: 1px solid black;
+  padding: 1%;
+  border-radius: 3px;
+}
+
+.inputArea label:hover,
+.inputArea input:hover {
+  cursor: pointer;
+}
